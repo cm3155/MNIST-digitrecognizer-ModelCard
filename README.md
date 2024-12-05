@@ -20,7 +20,7 @@
 | Name | Modeling Role | Measurement Level| Description|
 | ---- | ------------- | ---------------- | ---------- |
 |**Image**| input | np.array | digit image |
-| **Label** | input | int | number 0-9 that the image features |
+| **Label** | target | int64 | number 0-9 that the image features |
 
 
 * **Source of training data**: Kaggle
