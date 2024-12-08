@@ -26,13 +26,13 @@
 * **Source of training data**: Kaggle
 * **How training data was divided into training and validation data**: 80% training, 20% validation
 * **Number of rows in training and validation data**:
-  * Training rows: 15,000
-  * Validation rows: 7,500
+  * Training rows: 33,600
+  * Validation rows: 4,400
 
 ### Test Data
 * **Source of test data**: Kaggle
-* **Number of rows in test data**: 7,500
-* **State any differences in columns between training and test data**: None
+* **Number of rows in test data**: 28,000
+* **State any differences in columns between training and test data**: Test data does not contain label information
 
 ### Model details
 * **Columns used as inputs in the final model**: 'Image'
@@ -42,20 +42,42 @@
 * **Version of the modeling software**: tensorflow 2.18.0
 * **Hyperparameters or other settings of your model**: 
 ```
-KerasClassifier(epochs=10, batch_size=64,verbose=0)
+def define_model():
+	model = Sequential()
+	model.add(Conv2D(32, (3, 3), activation='relu', kernel_initializer='he_uniform', input_shape=(28, 28, 1)))
+	model.add(Conv2D(32, (3, 3), activation='relu', kernel_initializer='he_uniform'))
+	model.add(MaxPooling2D((2, 2)))
+	model.add(Dropout(0.1))
+	model.add(Conv2D(64, (3, 3), activation='relu', kernel_initializer='he_uniform'))
+	model.add(Conv2D(64, (3, 3), activation='relu', kernel_initializer='he_uniform'))
+	model.add(MaxPooling2D((2, 2)))
+	model.add(Dropout(0.1))
+	model.add(Conv2D(128, (3, 3), activation='relu', kernel_initializer='he_uniform'))
+	model.add(MaxPooling2D((2, 2)))
+	model.add(Dropout(0.1))
+	model.add(Flatten())
+	model.add(Dense(10, activation='softmax'))
+	# compile model
+	model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+	return model
 
-Model Architecture: ![image](https://github.com/user-attachments/assets/a178cfbd-1d7a-449c-b82a-0f5019436b68)
-
+model = define_model()
+history = model.fit(trainX, trainY, epochs=10, batch_size=64, validation_data=(testX, testY), verbose=0)
+_, acc = model.evaluate(testX, testY, verbose=0)
 ```
+*  **Model Architecture**:
+
+![alt text](https://github.com/user-attachments/assets/9769ae41-915c-42da-a94b-fc90f93c58dd)
+
 ### Quantitative Analysis
 
-* Models were assessed with AUC: 
+* For this competition, models were assessed with Accuracy: 
 
-| Train AUC | Validation AUC | Test AUC |
+| Train Accuracy | Validation Accuracy | Test Accuracy |
 | ------ | ------- | -------- |
-| 0.3456 | 0.7891  | 0.7687* |
+| 0.9972 | 0.9898  | 0.9898* |
 
 
-(*Test AUC taken from https://github.com/jphall663/GWU_rml/blob/master/assignments/model_eval_2023_06_21_12_52_47.csv)
+(*Test Accuracy taken from https://www.kaggle.com/competitions/digit-recognizer/submissions)
 
 
