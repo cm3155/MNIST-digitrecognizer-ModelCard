@@ -39,15 +39,13 @@
 * **Column(s) used as target(s) in the final model**: 'Label'
 * **Type of model**: Convolutional Neural Network 
 * **Software used to implement the model**: Python, Keras, Tensorflow
-* **Version of the modeling software**: 
+* **Version of the modeling software**: tensorflow 2.18.0
 * **Hyperparameters or other settings of your model**: 
 ```
-DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
-                       max_depth=6, max_features=None, max_leaf_nodes=None,
-                       min_impurity_decrease=0.0, min_impurity_split=None,
-                       min_samples_leaf=1, min_samples_split=2,
-                       min_weight_fraction_leaf=0.0, presort='deprecated',
-                       random_state=12345, splitter='best')
+KerasClassifier(epochs=10, batch_size=64,verbose=0)
+
+Model Architecture: ![image](https://github.com/user-attachments/assets/a178cfbd-1d7a-449c-b82a-0f5019436b68)
+
 ```
 ### Quantitative Analysis
 
