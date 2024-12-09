@@ -6,7 +6,7 @@
 * **Model date**: December 9, 2024
 * **Model version**: 0.1
 * **License**: MIT
-* **Model implementation code**: [DNSC_6301_Example_Project.ipynb](https://github.com/jphall663/GWU_DNSC_6301_project/blob/main/DNSC_6301_Example_Project.ipynb)
+* **Model implementation code**: [DigitRecognizerComp_Macklin.ipynb](https://github.com/cm3155/final-proj/blob/main/DigitRecognizerComp_Macklin.ipynb)
 
 ### Intended Use
 * **Primary intended uses**: This model is an example of a model that could be used to recognize and classify images of hand-written digits from 0-9. 
