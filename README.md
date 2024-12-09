@@ -9,11 +9,17 @@
 * **Model implementation code**: [DigitRecognizerComp_Macklin.ipynb](https://github.com/cm3155/final-proj/blob/main/DigitRecognizerComp_Macklin.ipynb)
 
 ### Intended Use
-* **Primary intended uses**: This model is an educational example of a model that could be used to recognize and classify images of hand-written digits from 0-9. 
+* **Primary intended uses**: This model is an educational example of a model that could be used to classify images of hand-written digits from 0-9. 
 * **Primary intended users**: Students and those interested in learning about machine learning. 
 * **Out-of-scope use cases**: Any use beyond an educational example is out-of-scope.
 
 ### Training Data
+
+* **Source of training data**: Kaggle
+* **How training data was divided into training and validation data**: 80% training, 20% validation
+* **Number of rows in training and validation data**:
+  * Training rows: 33,600
+  * Validation rows: 4,400
 
 * Data dictionary: 
 
@@ -23,22 +29,16 @@
 | **Label** | target | int | number (0-9) that describes the image |
 
 
-* **Source of training data**: Kaggle
-* **How training data was divided into training and validation data**: 80% training, 20% validation
-* **Number of rows in training and validation data**:
-  * Training rows: 33,600
-  * Validation rows: 4,400
-
 ### Test Data
 * **Source of test data**: Kaggle
 * **Number of rows in test data**: 28,000
 * **State any differences in columns between training and test data**: Test data does not contain label information
 
 ### Model details
-* **Columns used as inputs in the final model**: 'Image'
-* **Column(s) used as target(s) in the final model**: 'Label'
+* **Columns used as inputs in the final model**: The image is the input, therefore columns 'pixel0' through 'pixel783' were used
+* **Column(s) used as target(s) in the final model**: 'label'
 * **Type of model**: Convolutional Neural Network 
-* **Software used to implement the model**: Python, Keras, Tensorflow
+* **Software used to implement the model**: Python, Keras, Tensorflow, sklearn, pandas, NumPy
 * **Version of the modeling software**: tensorflow 2.18.0
 * **Hyperparameters or other settings of your model**: 
 ```
@@ -75,9 +75,11 @@ _, acc = model.evaluate(testX, testY, verbose=0)
 
 | Train Accuracy | Validation Accuracy | Test Accuracy |
 | ------ | ------- | -------- |
-| 0.9987 | 0.9917  | 0.9909* |
+| 0.9992 | 0.9920  | 0.9923* |
 
 (*Test Accuracy taken from https://www.kaggle.com/competitions/digit-recognizer/submissions)
+
+![alt text](https://github.com/user-attachments/assets/7f02f230-6df1-401d-b5ab-456d6a349eb5)
 
 ### Potential negative impacts of using this model:
 * This model did not achieve perfect accuracy on the validation or test data sets, meaning that it is likely to also classify some images incorrectly if given further unseen data. 
