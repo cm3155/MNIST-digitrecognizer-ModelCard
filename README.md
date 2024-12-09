@@ -80,8 +80,6 @@ _, acc = model.evaluate(testX, testY, verbose=0)
 (*Test Accuracy taken from https://www.kaggle.com/competitions/digit-recognizer/submissions)
 
 ### Potential negative impacts of using this model:
-* Model did not achieve perfect accuracy on the validation or test data sets, meaning that it is likely to also classify some images incorrectly if given further unseen data. 
-* It is reasonable to assume that there exists some other model architecture that would perform better on the test data, so if the model was used for educational purposes, users may base their own models off of an inferior architecture. 
-* If the model was used for an out-of-scope use case, for example, in mailing services, incorrectly classfied numbers could lead to adresses being processed incorrectly and mail being sent to the wrong address. This could result in financial losses and breaches related to security and private information. 
-
-
+* This model did not achieve perfect accuracy on the validation or test data sets, meaning that it is likely to also classify some images incorrectly if given further unseen data. 
+* It is reasonable to assume that there exists some other model architecture that would perform better on the test data. If the model was used for educational purposes, there is a risk of users basing their own models off of an inferior architecture. 
+* If the model was used for an out-of-scope use case, for example, in mailing, incorrectly classfied numbers could lead to addresses being processed incorrectly and mail being sent to the wrong place. This could result in financial losses and breaches in security. 
