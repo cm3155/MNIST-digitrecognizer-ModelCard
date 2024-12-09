@@ -77,7 +77,14 @@ _, acc = model.evaluate(testX, testY, verbose=0)
 | ------ | ------- | -------- |
 | 0.9972 | 0.9898  | 0.9898* |
 
-
 (*Test Accuracy taken from https://www.kaggle.com/competitions/digit-recognizer/submissions)
+
+Describe potential negative impacts of using your model:
+■ Math or software problems
+■ Real-world risks: who, what, when or how
+○ Describe potential uncertainties relating to the impacts of using your model:
+■ Math or software problems
+■ Real-world risks: who, what, when or how?
+○ Describe any unexpected or results
 
 
