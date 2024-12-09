@@ -9,7 +9,7 @@
 * **Model implementation code**: [DigitRecognizerComp_Macklin.ipynb](https://github.com/cm3155/final-proj/blob/main/DigitRecognizerComp_Macklin.ipynb)
 
 ### Intended Use
-* **Primary intended uses**: This model is an example of a model that could be used to recognize and classify images of hand-written digits from 0-9. 
+* **Primary intended uses**: This model is an educational example of a model that could be used to recognize and classify images of hand-written digits from 0-9. 
 * **Primary intended users**: Students and those interested in learning about machine learning. 
 * **Out-of-scope use cases**: Any use beyond an educational example is out-of-scope.
 
@@ -19,8 +19,8 @@
 
 | Name | Modeling Role | Measurement Level| Description|
 | ---- | ------------- | ---------------- | ---------- |
-|**Image**| input | np.array | digit image |
-| **Label** | target | int64 | number 0-9 that the image features |
+|**Image**| input | array of 784 pixel values | 28x28 gray-scale image of hand-drawn digit (0-9) |
+| **Label** | target | int | number (0-9) that describes the image |
 
 
 * **Source of training data**: Kaggle
@@ -79,12 +79,9 @@ _, acc = model.evaluate(testX, testY, verbose=0)
 
 (*Test Accuracy taken from https://www.kaggle.com/competitions/digit-recognizer/submissions)
 
-Describe potential negative impacts of using your model:
-■ Math or software problems
-■ Real-world risks: who, what, when or how
-○ Describe potential uncertainties relating to the impacts of using your model:
-■ Math or software problems
-■ Real-world risks: who, what, when or how?
-○ Describe any unexpected or results
+### Potential negative impacts of using this model:
+* Model did not achieve perfect accuracy on the validation or test data sets, meaning that it is likely to also classify some images incorrectly if given further unseen data. 
+* It is reasonable to assume that there exists some other model architecture that would perform better on the test data, so if the model was used for educational purposes, users may base their own models off of an inferior architecture. 
+* If the model was used for an out-of-scope use case, for example, in mailing services, incorrectly classfied numbers could lead to adresses being processed incorrectly and mail being sent to the wrong address. This could result in financial losses and breaches related to security and private information. 
 
 
