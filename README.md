@@ -6,7 +6,7 @@
 * **Model date**: December 9, 2024
 * **Model version**: 0.1
 * **License**: MIT
-* **Model implementation code**: [DigitRecognizerComp_Macklin.ipynb](https://github.com/cm3155/final-proj/blob/main/DigitRecognizerComp_Macklin.ipynb)
+* **Model implementation code**: [DigitRecognizerComp.ipynb](https://github.com/cm3155/final-proj/blob/main/DigitRecognizerComp.ipynb)
 
 ### Intended Use
 * **Primary intended uses**: This model is an educational example of a model that could be used to classify images of hand-written digits from 0-9. 
